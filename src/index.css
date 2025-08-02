@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    animation: gradientShift 15s ease infinite;
+    background-size: 800% 800%;
+}
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.errorP {
+    text-align: center;
+    color: red;
+    font-weight: 900;
+    margin-top: 20px;
+    font-size: 20px;
+    
+}
+.headerContainer {
+    text-align: center;
+    background: rgba(30, 30, 40, 0.95);
+    padding: 6px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.headerContainer a {
+    align-self: flex-end;
+    position: absolute;
+    right:0%;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s;
+    animation: move 3s linear 0s infinite alternate;
+    /* margin-left: auto; */
+}
+@keyframes move {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-5px); }  
+  50%  { transform: translateY(5px); }  
+  75%  { transform: translateY(-5px); }  
+  100% { transform: translateY(0); }    
+}
+.headerContainer div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.headerContainer img {
+    width: 80px;
+    height: 60px;
+    /* margin-top: 10px; */
+    /* border-radius: 50%; */
+}
+.headerContainer a:hover {
+    transform: scale(1.1);
+}
+.headerContainer h1 {
+    color: #00e6d0;
+    font-weight: 900;
+    font-size: 48px;
+    text-shadow: 2px 2px 8px #0ff;
+    transition: text-shadow 1s linear;
+}
+.headerContainer h1:hover {
+    text-shadow: 6px 6px 12px rgb(3, 199, 199);
+}
+.headerContainer p {
+    font-size: 20px;
+    color: #b0b0b0;
+    text-shadow: 1px 1px 2px #00e6d0;
+}
+.headerContainer p:hover {
+    transition: text-shadow 1s linear;
+    text-shadow: 1px 1px 2px aqua;
+}
+.createToDo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: rgba(40, 40, 50, 0.85);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    width: 60%;
+    margin: 30px auto 0 auto;
+}
+.createToDo h2 {
+    font-size: 30px;
+}
+.createToDo div {
+    /* border: 0.1px solid gray; */
+    /* border-radius: 20px; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createToDo div:nth-child(1) {
+    border: 2px solid gray;
+    flex-direction: column;
+    width: 25%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(3, 219, 219);
+    color: white;
+    transition: background-color 0.2s linear ;
+    border-right: 0px;
+    
+}
+.createToDo div:nth-child(1):hover {
+    background-color: rgb(9, 239, 239);
+    animation: shake 0.7s linear 0s infinite alternate;
+
+}
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(4deg); }
+  50% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+  100% { transform: rotate(0deg); }
+}  
+.createToDo div:nth-child(2) {
+    border: 2px solid gray;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+    width: 75%;
+} 
+.createToDo input {
+    width: 70%;
+    padding: 14px;
+    border: 1.5px solid #00e6d0;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    font-size: 18px;
+    background: #232526;
+    color: #f1f1f1;
+    transition: transform 0.2s;
+}
+.createToDo input::placeholder {
+    color: #7fffd4;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+.createToDo input:focus {
+    /* outline-color: rgb(149, 4, 4); */
+    outline-width: 2px;
+    transform: scale(1.05);
+    
+}
+.createToDo input:focus::placeholder {
+    opacity: 0;
+}
+.createToDo button {
+    font-size: 24px;
+    padding: 12px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-left: 0px;
+    border: none;
+    background: linear-gradient(90deg, #00e6d0 0%, #007cf0 100%);
+    color: #232526;
+    cursor: pointer;
+    font-weight: bolder;
+    box-shadow: 0 2px 8px #00e6d0aa;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.createToDo button:hover {
+    transform: scale(1.03);
+    /* background-color: rgb(81, 247, 247); */
+    /* border-color: rgb(149, 4, 4); */
+    border-width: 2px;
+    box-shadow: 4px 4px 4px gray;
+}
+.createToDo button:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px #00e6d0aa;
+}
+
+.toDoListDiv {
+    margin: 20px auto 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(30, 30, 40, 0.7);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    /* justify-content: center; */
+}
+.toDoListDiv h2 {
+    color: rgb(6, 156, 156);
+    font-size: 30px;
+    text-align: center;
+}
+.noTaskP {
+    text-align: center;
+    color: rgb(165, 3, 3);
+    margin: 10px 0px;
+    font-weight: 800;
+    font-style: italic;
+
+}
+.toDoListInternalDiv {
+    border: 2px solid gainsboro;
+    /* border-radius: 20px; */
+    margin: 8px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+}
+.toDoItem:nth-child(1) {
+    margin-top: 30px;
+}
+.toDoItem:last-child {
+    margin-bottom: 30px;
+}
+.toDoItem {
+    background: rgba(40, 40, 50, 0.95);
+    color: #f1f1f1;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    margin-bottom: 18px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInSlideUp 0.7s ease forwards;
+}
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.toDoItem:hover {
+    box-shadow: 0 6px 24px #00e6d0cc;
+    background: #232526;
+    transform: translateY(-2px) scale(1.01);
+}
+.taskCompletedP {
+    text-decoration: line-through;
+    color: #888 !important;
+    opacity: 0.5;
+    font-style: italic;
+    font-weight: 500;
+    transition: color 0.2s, opacity 0.2s;
+}
+.toDoItem div:nth-child(1) {
+    width: 70%;
+    /* text-align: justify; */
+}
+.editInput {
+    width: 80%;
+    padding: 12px;
+    /* background-color: yellow; */
+    border-radius: 20px;
+}
+.modifyButtonsDiv {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.modifyButtonsDiv button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #007cf0 0%, #00e6d0 100%);
+    color: #232526;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 6px;
+    box-shadow: 0 2px 8px #007cf088;
+    border: none;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modifyButtonsDiv button:hover {
+    background: linear-gradient(135deg, #00e6d0 0%, #007cf0 100%);
+    color: #00e6d0;
+    transform: scale(1.12);
+}
+.modifyButtonsDiv button:active {
+    transform: scale(0.92);
+}
+
+footer {
+    background-color: #aaa;
+    padding: 4px;
+    text-align: center;
+    /* position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; */
+}
+footer a {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+@media (max-width: 1150px) {
+    @keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}  
+    .toDoItem {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .toDoItem > div {
+        width: 100%;
+    }
+    .toDoItem div:nth-child(1) {
+        width: 100%;
+    }
+    .modifyButtonsDiv {
+        justify-content: start;
+    }
+    .modifyButtonsDiv button {
+        font-size: 16px;
+
+    }
+}
+
+@media (max-width: 1000px) {
+    .createToDo {
+        flex-direction: column;
+        height: auto;
+        width: 80%;
+        
+    }
+    .createToDo div:nth-child(1) {
+        width: 40%;
+        height: 60px;        
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        flex-direction: row;
+        /* align-self: flex-start; */
+        border-top-right-radius:16px ;
+        border-bottom-right-radius: 16px;
+    }
+    .createToDo div:nth-child(2) {
+        margin-top: 10px;
+        /* height: 60%; */
+        width: 100%;
+        border-width: 0px;;
+    }
+    .createToDo input {
+        width: 80%;
+    }
+
+    .createToDo button {
+        width: 20%;
+    }
+    
+    .toDoListDiv {
+        width: 80%;
+    }
+    
+}
+@media (max-width: 720px) {
+    .createToDo div:nth-child(1) {
+        width: 60%;
+    }
+}
+@media (max-width: 550px) {    
+    .createToDo input {
+        width: 70%;
+    }
+    .createToDo button {
+        width: 30%;
+    }
+    .headerContainer h1 {
+        font-size: 34px;
+    }
+    .headerContainer a {
+        margin-right: 0;
+    }
+    .headerContainer img {
+        height: 40px;
+        width: 50px;
+    }
+    @keyframes move {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-2px); }  
+  50%  { transform: translateY(2px); }  
+  75%  { transform: translateY(-2px); }  
+  100% { transform: translateY(0); }    
+}
+}
+@media (max-width: 500px) {
+    .createToDo div:nth-child(1) {
+        width: 80%;
+    }
+}
+@media (max-width: 600px) {
+    .toDoItem {
+        padding: 12px 8px;
+        font-size: 15px;
+    }
+    .modifyButtonsDiv button {
+        font-size: 15px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+    }
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: #232526;
+}
+::-webkit-scrollbar-thumb {
+    background: #00e6d0;
+    border-radius: 8px;
+}
